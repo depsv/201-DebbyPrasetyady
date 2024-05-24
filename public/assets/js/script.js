@@ -1,6 +1,6 @@
-var map = L.map('map').setView([-6.334, 106.971], 15);
+var map = L.map('map').setView([-6.3347131, 106.9744025], 15);
 
-var marker = L.marker([-6.334, 106.971]).addTo(map);
+var marker = L.marker([-6.3347131, 106.9744025]).addTo(map);
 marker.bindPopup("<b>Hello there!</b><br>We are here!!!").openPopup();
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

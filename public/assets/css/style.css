@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .section-1 {
@@ -25,6 +26,15 @@ body, html {
 }
 
 .section-3 {
+    position: relative;
+    background-image: url('/assets/img/background.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-4 {
     position: relative;
     background-image: url('/assets/img/background.png');
     height: 100%;
@@ -99,13 +109,25 @@ body, html {
     padding-top: 30px;
 }
 
-.service-title h1 {
+.lokasi-title h1 {
     font-size: 50px;
     font-weight: bold;
     color: #00B8F1;
 }
 
 #map {
-    height: 300px;
+    height: 450px;
     width: 75%;
+}
+
+.kontak-row {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.content-kontak a {
+    text-decoration: none;
+    color: #000;
 }

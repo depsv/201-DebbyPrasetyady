@@ -95,34 +95,35 @@
     </section>
     <section class="section-4" id="kontak">
         <div class="d-flex service-title">
-            <h1>Contact Kami</h1>
+            <h1>Contact Us</h1>
             <p>Anda dapat menghubungi kami melalui kontak berikut</p>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-2 service-content">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="{{ asset('assets/img/whatsapp.png') }}" class="card-img-top w-50" alt="...">
-                        <h5 class="card-title">Whatsapp</h5>
-                        <p class="card-text">+62 812-3456-7890</p>
+        <div class="row d-flex kontak-row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6 content-kontak">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/002-whatsapp.png') }}" alt="whatsapp" width="50px" height="50px">
+                            <p>08123456789</p>
+                        </a>
+                        <a href="#">
+                            <img src="{{ asset('assets/img/001-instagram.png') }}" alt="instagram" width="50px" height="50px">
+                            <p>@laundrygo</p>
+                        </a>
+                        <a href="#">
+                            <img src="{{ asset('assets/img/005-facebook.png') }}" alt="facebook" width="50px" height="50px">
+                            <p>LaundryGO</p>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="{{ asset('assets/img/phone.png') }}" class="card-img-top w-50" alt="...">
-                        <h5 class="card-title">Phone</h5>
-                        <p class="card-text">+62 812-3456-7890</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="{{ asset('assets/img/email.png') }}" class="card-img-top w-50" alt="...">
-                        <h5 class="card-title">Email</h5>
-                        <p class="card-text">debbyprasetyadi@gmail.com</p>
+                    <div class="col-6 content-kontak">
+                        <a href="#">
+                            <img src="{{ asset('assets/img/003-gmail.png') }}" alt="email" width="50px" height="50px">
+                            <p>laundry-go@gmail.com</p>
+                        </a>
+                        <a href="#">
+                            <img src="{{ asset('assets/img/004-twitter.png') }}" alt="twitter" width="50px" height="50px">
+                            <p>@laundrygo</p>
+                        </a>
                     </div>
                 </div>
             </div>
