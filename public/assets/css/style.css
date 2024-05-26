@@ -1,0 +1,119 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.section-1,.section-2,.section-3,.section-4,.login-page {
+    position: relative;
+    background-image: url('/assets/img/background.png');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #00B8F1;
+}
+
+.nav-item a, .nav-item .btn-logout {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+.nav-item a:hover, .nav-item .btn-logout:hover {
+    color: #000;
+}
+
+.home-title {
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+}
+
+.service-content {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.service-content::-webkit-scrollbar {
+    display: none;
+}
+
+.service-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.service-title h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #00B8F1;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body h5 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #00B8F1;
+}
+
+.lokasi-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.lokasi-title h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #00B8F1;
+}
+
+#map {
+    height: 450px;
+    width: 75%;
+}
+
+.kontak-row {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.content-kontak a {
+    text-decoration: none;
+    color: #000;
+}
+
+.leaflet-pane {
+    z-index: 0 !important;
+}
+
+.button-center {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 400;
+}
