@@ -23,7 +23,8 @@ class EditUserComponent extends Component
 
     public function render()
     {
-        return view('livewire.edit-user-component');
+        return view('livewire.edit-user-component')
+            ->layout('layouts.app');
     }
 
     public function updateUser()
