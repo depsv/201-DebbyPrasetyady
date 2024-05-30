@@ -14,6 +14,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/users', function () {
         return view('users');
     })->name('users');
+    Route::get('users/add', function () {
+        return view('add-user');
+    })->name('add-user');
+    Route::get('users/edit/{userId}', function () {
+        return view('edit-user');
+    })->name('edit-user');
+
 
     Route::get('/services', function () {
         return view('services');
