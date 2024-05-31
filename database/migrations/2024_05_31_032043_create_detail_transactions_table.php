@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('qty');
             $table->double('discount')->nullable();
             $table->double('total');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
