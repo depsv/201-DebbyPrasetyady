@@ -40,9 +40,15 @@
                             <a class="nav-link" href="#kontak">Contact</a>
                         </li>
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                            </li>
+                            @if(Auth::user()->is_admin)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('orders.index') }}">Order</a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf
@@ -172,9 +178,15 @@
                             <a class="nav-link" href="#kontak">Contact</a>
                         </li>
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                            </li>
+                            @if(Auth::user()->is_admin)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('orders.index') }}">Order</a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf

@@ -64,4 +64,9 @@ class User extends Authenticatable
             'is_admin' => 'boolean',
         ];
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

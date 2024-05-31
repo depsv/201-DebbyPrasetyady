@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,24 +8,41 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+    // Order routes
+    Route::prefix('orders')->name('orders.')->group(function () {
+        Route::get('/', \App\Livewire\OrdersComponent::class)->name('index');
+    });
+
+    // History routes
+    Route::prefix('history')->name('history.')->group(function () {
+        Route::get('/', \App\Livewire\HistoryComponent::class)->name('index');
+    });
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
+
+    // Dashboard route
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/users', function () {
-        return view('users');
-    })->name('users');
-    Route::get('users/add', function () {
-        return view('add-user');
-    })->name('add-user');
-    Route::get('users/edit/{userId}', \App\Livewire\EditUserComponent::class)->name('edit-user');
+    // Group routes for Users
+    Route::prefix('users')->name('users.')->group(function () {
+        Route::get('/', \App\Livewire\User\UsersComponent::class)->name('index');
+        Route::get('/add', \App\Livewire\User\AddUserComponent::class)->name('add');
+        Route::get('/edit/{userId}', \App\Livewire\User\EditUserComponent::class)->name('edit');
+    });
 
 
-    Route::get('/services', function () {
-        return view('services');
-    })->name('services');
+    // Group routes for Services
+    Route::prefix('services')->name('services.')->group(function () {
+        Route::get('/', \App\Livewire\Service\ServicesComponent::class)->name('index');
+        Route::get('/add', \App\Livewire\Service\AddServiceComponent::class)->name('add');
+        Route::get('/edit/{serviceId}', \App\Livewire\Service\EditServiceComponent::class)->name('edit');
+    });
 
-    Route::get('/reports', function () {
-        return view('reports');
-    })->name('reports');
-});
+    // Group routes for Reports
+    Route::prefix('reports')->name('reports.')->group(function () {
+        Route::get('/', \App\Livewire\Transaction\TransactionComponent::class)->name('index');
+    });
+})->middleware(AdminMiddleware::class);

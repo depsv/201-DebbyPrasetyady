@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\User;
 
 use Livewire\Component;
 use App\Models\User;
@@ -20,7 +20,7 @@ class AddUserComponent extends Component
 
     public function render()
     {
-        return view('livewire.add-user-component');
+        return view('livewire.user.add-user-component')->layout('layouts.app');
     }
 
     public function addUser()
