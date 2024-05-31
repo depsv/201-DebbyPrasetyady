@@ -29,6 +29,7 @@ class OrdersComponent extends Component
     public function addOrder()
     {
         // Jika selectedServiceId tidak ada, langsung kembalikan
+        dd("addorder");
         if (!$this->selectedServiceId) {
             return;
         }
