@@ -56,9 +56,6 @@ class OrdersComponent extends Component
 
     public function submitOrders()
     {
-        if (empty($this->orders)) {
-            return;
-        }
 
         \DB::beginTransaction();
 
