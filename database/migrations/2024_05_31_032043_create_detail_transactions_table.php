@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('transaction_id')->constrained('transactions')->onDelete('cascade');
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->integer('qty');
-            $table->double('discount')->nullable();
+            $table->double('discount')->default(0);
             $table->double('total');
-            $table->text('notes')->nullable();
+            $table->text('notes')->default('');
             $table->timestamps();
         });
     }

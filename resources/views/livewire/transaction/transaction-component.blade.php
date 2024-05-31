@@ -32,9 +32,6 @@
                                         Status
                                     </th>
                                     <th class="px-4 py-2">
-                                        Notes
-                                    </th>
-                                    <th class="px-4 py-2">
                                         Action
                                     </th>
                                 </tr>
@@ -46,7 +43,6 @@
                                         <td class="border px-4 py-2">{{ $transaction->user->name }}</td>
                                         <td class="border px-4 py-2 text-center">Rp. {{ $transaction->amount }}</td>
                                         <td class="border px-4 py-2">{{ $transaction->status }}</td>
-                                        <td class="border px-4 py-2">{{ $transaction->notes ?? 'Empty' }}</td>
                                         <td class="border px-4 py-2 text-center flex justify-center items-center">
                                             <x-button wire:click="showDetailTransaction({{ $transaction->id }})" wire:loading.attr="disabled">
                                                 {{ __('Detail') }}

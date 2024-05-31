@@ -36,6 +36,7 @@ class OrdersComponent extends Component
         $selectedService = Service::find($this->selectedServiceId);
 
         $this->orders[] = [
+            'service_id' => $selectedService->id,
             'service' => $selectedService->name,
             'unit' => $selectedService->unit,
             'price' => $selectedService->price,
@@ -71,12 +72,11 @@ class OrdersComponent extends Component
             foreach ($this->orders as $order) {
                 $detail = DetailTransaction::create([
                     'transaction_id' => $transaction->id,
-                    'service_id' => $order['service'],
+                    'service_id' => $order['service_id'],
                     'qty' => $order['quantity'],
                     'total' => $order['total'],
                     'notes' => $order['notes'],
                 ]);
-                dd($detail,$order);
             }
 
             \DB::commit();
@@ -87,7 +87,6 @@ class OrdersComponent extends Component
             return redirect()->to('orders');
         } catch (\Exception $e) {
             \DB::rollback();
-            dd($e->getMessage());
 
             session()->flash('error', 'Failed to submit orders. Please try again later.');
         }
