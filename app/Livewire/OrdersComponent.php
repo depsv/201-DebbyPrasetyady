@@ -29,7 +29,6 @@ class OrdersComponent extends Component
     public function addOrder()
     {
         // Jika selectedServiceId tidak ada, langsung kembalikan
-        dd("addorder");
         if (!$this->selectedServiceId) {
             return;
         }
@@ -70,13 +69,14 @@ class OrdersComponent extends Component
             ]);
 
             foreach ($this->orders as $order) {
-                DetailTransaction::create([
+                $detail = DetailTransaction::create([
                     'transaction_id' => $transaction->id,
                     'service_id' => $order['service'],
                     'qty' => $order['quantity'],
                     'total' => $order['total'],
                     'notes' => $order['notes'],
                 ]);
+                dd($detail,$order);
             }
 
             \DB::commit();
@@ -87,6 +87,7 @@ class OrdersComponent extends Component
             return redirect()->to('orders');
         } catch (\Exception $e) {
             \DB::rollback();
+            dd($e->getMessage());
 
             session()->flash('error', 'Failed to submit orders. Please try again later.');
         }
